@@ -73,7 +73,6 @@ public class RedBlackTree extends BinaryTree {
     }
 
     private void removeNode(Node node) {
-        // Case 1: Node has no children
         if (node.getLeft() == null && node.getRight() == null) {
             if (node == root) {
                 root = null;
@@ -85,9 +84,7 @@ public class RedBlackTree extends BinaryTree {
                 }
                 balanceTree(node.getParent());
             }
-        }
-        // Case 2: Node has one child
-        else if (node.getLeft() == null) {
+        } else if (node.getLeft() == null) {
             Node child = node.getRight();
             if (node == root) {
                 root = child;
@@ -113,9 +110,7 @@ public class RedBlackTree extends BinaryTree {
                 child.setParent(node.getParent());
                 balanceTree(child);
             }
-        }
-        // Case 3: Node has two children
-        else {
+        } else {
             Node successor = findMin(node.getRight());
             node.setData(successor.getData());
             removeNode(successor);

@@ -18,9 +18,10 @@ public class Main {
             System.out.println("1. Insert Node");
             System.out.println("2. Remove Node");
             System.out.println("3. Randomize Node");
-            System.out.println("4. Display Tree");
-            System.out.println("5. Clear Tree");
-            System.out.println("6. Get Tree Height");
+            System.out.println("4. All Traversal");
+            System.out.println("5. Display Tree");
+            System.out.println("6. Clear Tree");
+            System.out.println("7. Get Tree Height");
             System.out.println("0. Exit");
             System.out.print("Choose an option: ");
 
@@ -54,16 +55,30 @@ public class Main {
                     break;
 
                 case 4:
+                    System.out.println("Pre-Order Traversal:");
+                    tree.preOrderTraversal(tree.getRoot());
+                    System.out.println();
+
+                    System.out.println("In-Order Traversal:");
+                    tree.inOrderTraversal(tree.getRoot());
+                    System.out.println();
+
+                    System.out.println("Post-Order Traversal:");
+                    tree.postOrderTraversal(tree.getRoot());
+
+                    break;
+
+                case 5:
                     System.out.println("Red-Black Tree:");
                     tree.showTree();
                     break;
 
-                case 5:
+                case 6:
                     tree.setRoot(null);
                     System.out.println("Tree is cleared!");
                     break;
 
-                case 6:
+                case 7:
                     System.out.println("Getting height...");
                     System.out.println("Tree height is " + tree.getHeight());
                     break;
